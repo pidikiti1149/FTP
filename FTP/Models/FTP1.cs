@@ -10,7 +10,7 @@ namespace FTP.Models
 {
     public class FTP1
     {
-        public static List<string> GetDirectory(string url, string username = Constants.FTP1.Username, string password = Constants.FTP1.Password)
+        public static List<string> GetDirectory(string url, string username = Constants.FTP1.UserName, string password = Constants.FTP1.Password)
         {
             List<string> output = new List<string>();
 
@@ -35,7 +35,7 @@ namespace FTP.Models
                         string responseString = reader.ReadToEnd();
 
                         //Split the response by Carriage Return and Line Feed character to return a list of directories
-                        output = responseString.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                        output = responseString.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
                     }
 
@@ -51,7 +51,7 @@ namespace FTP.Models
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static bool FileExists(string remoteFileUrl, string username = Constants.FTP1.Username, string password = Constants.FTP1.Password)
+        public static bool FileExists(string remoteFileUrl, string username = Constants.FTP1.UserName, string password = Constants.FTP1.Password)
         {
             // Get the object used to communicate with the server.
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(remoteFileUrl);
@@ -88,7 +88,7 @@ namespace FTP.Models
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns>Result of file download</returns>
-        public static string DownloadFile(string sourceFileUrl, string destinationFilePath, string username = Constants.FTP1.Username, string password = Constants.FTP1.Password)
+        public static string DownloadFile(string sourceFileUrl, string destinationFilePath, string username = Constants.FTP1.UserName, string password = Constants.FTP1.Password)
         {
             string output;
 
@@ -156,7 +156,7 @@ namespace FTP.Models
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static byte[] DownloadFileBytes(string sourceFileUrl, string username = Constants.FTP1.Username, string password = Constants.FTP1.Password)
+        public static byte[] DownloadFileBytes(string sourceFileUrl, string username = Constants.FTP1.UserName, string password = Constants.FTP1.Password)
         {
             byte[] output;
 

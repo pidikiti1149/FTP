@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using FTP.Models;
 
+
 namespace FTP
 {
     class Program
@@ -36,10 +37,10 @@ namespace FTP
 
                     string csvFileData = Encoding.ASCII.GetString(csvBytes, 0, csvBytes.Length);
 
-                    string[] data = csvFileData.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] data = csvFileData.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
                     if (data.Length != 2)
                     {
-                        Console.WriteLine("Error in your Age");
+                        Console.WriteLine("There is an Error in Age");
                     }
                     else
                     {
@@ -51,14 +52,14 @@ namespace FTP
                 }
                 if (fileExists == true)
                 {
-                    string csvPath = $@"/Users/adityapidikiti/Downloads/Files/{directory}.csv";
+                    string csvPath = $@"/Users/adityapidikiti/Desktop/Files/{directory}.csv";
 
                     FTP1.DownloadFile(infoFilePath, csvPath);
-                    Console.WriteLine("Found info file:");
+                    Console.WriteLine("Found info of the file:");
                 }
                 else
                 {
-                    Console.WriteLine("Could not find info file:");
+                    Console.WriteLine("Couldn't find the info of file:");
                 }
 
                 Console.WriteLine("\t" + infoFilePath);
@@ -70,11 +71,11 @@ namespace FTP
                 if (imageFileExists == true)
                 {
 
-                    Console.WriteLine("Found image file:");
+                    Console.WriteLine("Find the image file:");
                 }
                 else
                 {
-                    Console.WriteLine("Could not find image file:");
+                    Console.WriteLine("Couldn't find the image file:");
                 }
 
                 Console.WriteLine("\t" + imageFilePath);
@@ -82,7 +83,6 @@ namespace FTP
                 students.Add(student);
             }
 
-            //Save to CSV
             string studentsCSVPath = $"{Constants.Locations.DataFolder}//students.csv";
 
 
@@ -104,29 +104,29 @@ namespace FTP
                     countStartsWith++;
                 }
             }
-            Console.WriteLine("Number of people having LastName that starts with 'P':" + countStartsWith);
+            Console.WriteLine("people Whose LastName that starts with 'P':" + countStartsWith);
             foreach (var list1 in students)
             {
                 string string1 = list1.LastName;
                 if (string1.Contains(inputContains))
                 {
-                    Console.WriteLine("Last name starts with " + inputContains + " " + list1);
+                    Console.WriteLine("last name starts with " + inputContains + " " + list1);
                     countContains++;
                 }
             }
-            Console.WriteLine("Number of people having LastName that contains 'pa':" + countContains);
+            Console.WriteLine("People With LastName 'pa':" + countContains);
 
             Student me = students.SingleOrDefault(x => x.StudentId == myrecord.StudentId);
             Student meUsingFind = students.Find(x => x.StudentId == myrecord.StudentId);
 
 
-            var avgage = students.Average(x => x.Age);
-            var minage = students.Min(x => x.Age);
-            var maxage = students.Max(x => x.Age);
+            var averagegage = students.Average(x => x.Age);
+            var minimumage = students.Min(x => x.Age);
+            var maximumage = students.Max(x => x.Age);
 
-            Console.WriteLine("Average Age:" + avgage);
-            Console.WriteLine("Highest Age:" + maxage);
-            Console.WriteLine("Lowest Age:" + minage);
+            Console.WriteLine("average age:" + averagegage);
+            Console.WriteLine("high age:" + maximumage);
+            Console.WriteLine("low age:" + minimumage);
 
             
         }

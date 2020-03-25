@@ -19,7 +19,7 @@ namespace FTP.Models
 
             public readonly static string ContentPath = $"{ExePath}//..//..//..//Content";
             public readonly static string DataFolder = $"{ContentPath}//Data";
-            public readonly static string imageFolder = $"{ContentPath}//Image";
+            public readonly static string imageFolder = $"{ContentPath}\\Image";
 
             public const string InfoFile = "info.csv";
             public const string ImageFile = "myimage.jpg";
