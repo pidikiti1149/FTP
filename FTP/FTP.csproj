@@ -43,6 +43,7 @@
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\FTP1.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Imaging.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

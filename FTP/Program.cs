@@ -45,9 +45,8 @@ namespace FTP
                     else
                     {
                         student.FromCSV(data[1]);
-                        Console.WriteLine("Age:" + student.Age);
+                        Console.WriteLine("Age = " +student.Age);
                     }
-
 
                 }
                 if (fileExists == true)

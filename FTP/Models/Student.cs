@@ -87,8 +87,8 @@ namespace FTP.Models
 
         public void FromCSV(string csvdata)
         {
-            string[] stringSeparators1 = new string[] { " , " };
-            string[] data = csvdata.Split(stringSeparators1, StringSplitOptions.None);
+            
+            string[] data = csvdata.Split(new char[] { ',' }, StringSplitOptions.None);
 
             try
             {
@@ -113,8 +113,8 @@ namespace FTP.Models
             {
                 return;
             }
-            string[] stringSeparators = new string[] { " " };
-            string[] data = directory.Trim().Split(stringSeparators, StringSplitOptions.None);
+           
+            string[] data = directory.Trim().Split(new char[] { ' ' }, StringSplitOptions.None);
 
 
             StudentId = data[0];
