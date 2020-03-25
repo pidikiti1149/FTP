@@ -43,17 +43,13 @@
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\FTP1.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\image.cs" />
+    <Compile Include="TestService\TestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\info.csv" />
-    <None Include="Models\employees.xml" />
-    <None Include="Models\googlechartexample.html" />
-    <None Include="Models\EmptyHtmlFile.html" />
-    <None Include="Models\IndexHtmlFile.html" />
     <None Include="packages.config" />
     <None Include="Content\myimage.jpg" />
   </ItemGroup>
