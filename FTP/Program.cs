@@ -90,30 +90,30 @@ namespace FTP
             int count = students.Count();
             Console.WriteLine("Number of students:" + count);
 
-            string inputStartsWith = "P";
-            string inputContains = "pa";
-            int countStartsWith = 0;
-            int countContains = 0;
+            string StartWith = "P";
+            string Contains = "pa";
+            int NumberStartsWith = 0;
+            int NumberContains = 0;
             foreach (var list in students)
             {
                 string string1 = list.LastName;
-                if (string1.StartsWith(inputStartsWith))
+                if (string1.StartsWith(StartWith))
                 {
-                    Console.WriteLine("Last starts with " + inputStartsWith + " " + list);
-                    countStartsWith++;
+                    Console.WriteLine("Students whose name Last starts with " + StartWith + " " + list);
+                    NumberStartsWith++;
                 }
             }
-            Console.WriteLine("people Whose LastName that starts with 'P':" + countStartsWith);
+            Console.WriteLine("Students Whose LastName that starts with 'P':" + NumberStartsWith);
             foreach (var list1 in students)
             {
                 string string1 = list1.LastName;
-                if (string1.Contains(inputContains))
+                if (string1.Contains(Contains))
                 {
-                    Console.WriteLine("last name starts with " + inputContains + " " + list1);
-                    countContains++;
+                    Console.WriteLine("last name starts with " + Contains + " " + list1);
+                    NumberContains++;
                 }
             }
-            Console.WriteLine("People With LastName 'pa':" + countContains);
+            Console.WriteLine("Students whose LastName include with 'pa':" + NumberContains);
 
             Student me = students.SingleOrDefault(x => x.StudentId == myrecord.StudentId);
             Student meUsingFind = students.Find(x => x.StudentId == myrecord.StudentId);
