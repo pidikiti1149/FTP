@@ -38,15 +38,11 @@ namespace FTP
                     string csvFileData = Encoding.ASCII.GetString(csvBytes, 0, csvBytes.Length);
 
                     string[] data = csvFileData.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-                    if (data.Length != 2)
-                    {
-                        Console.WriteLine("There is an Error in Age");
-                    }
-                    else
-                    {
-                        student.FromCSV(data[1]);
+
+
+                    student.FromCSV(data[1]);
                         Console.WriteLine("Age = " +student.Age);
-                    }
+                    
 
                 }
                 if (fileExists == true)
